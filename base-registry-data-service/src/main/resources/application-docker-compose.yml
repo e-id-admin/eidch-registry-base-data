@@ -1,0 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Swiss Confederation
+#
+# SPDX-License-Identifier: MIT
+
+spring:
+  datasource:
+    url: "jdbc:postgresql://base-registry-db-1:5432/base-registry-db"
+    username: "postgres"
+    password: "secret"

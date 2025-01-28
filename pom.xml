@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ SPDX-FileCopyrightText: 2025 Swiss Confederation
+  ~
+  ~ SPDX-License-Identifier: MIT
+  -->
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ch.admin.bit.eid.datastore</groupId>
+    <artifactId>registry-base-data</artifactId>
+    <version>0.0.6-SNAPSHOT</version>
+    <name>registry-base-data</name>
+    <description>FOITT Datastore</description>
+    <properties>
+        <java.version>21</java.version>
+        <sonar.jacoco.itReportPath>${project.basedir}/../target/jacoco-it.exec</sonar.jacoco.itReportPath>
+        <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
+        <jacoco-maven-plugin.version>0.8.9</jacoco-maven-plugin.version>
+    </properties>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>base-registry-data-shared</module>
+        <module>base-registry-data-did-store</module>
+        <module>base-registry-data-service</module>
+    </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                            <goal>prepare-agent-integration</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

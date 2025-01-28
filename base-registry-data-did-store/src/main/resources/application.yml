@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: 2025 Swiss Confederation
+#
+# SPDX-License-Identifier: MIT
+
+spring:
+  datasource:
+    hikari:
+      schema: ${spring.jpa.properties.hibernate.default_schema}
+
+did-authoring:
+  httpRoute: "http://localhost:8190"
+  didRoute: "localhost%3A8190"
